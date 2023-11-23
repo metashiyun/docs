@@ -1,0 +1,31 @@
+export const metadata = {
+    title: "玩家群组"
+}
+
+玩家群组即用于玩家之间交流的讨论组。
+
+玩家群组并不仅由管理团队建立，玩家之间也会相互建立各种不同的群组。这里仅列出部分群组。
+
+## 官方群组
+
+### Discord
+
+[点击加入](https://discord.gg/Q6NhsszQXk)
+
+元石云官方Discord服务器。
+
+## 非官方群组
+
+### “元石云 metaShiyun” 准官方QQ群组
+
+管理团队设立的非官方QQ群组。加入白名单后，可与服主联系加群。
+
+export default function MDXPage({children}) {
+    return (
+        <>
+            <h1>{metadata.title}</h1>
+            <h3>{metadata.subtitle}</h3>
+            {children}
+        </>
+    )
+}

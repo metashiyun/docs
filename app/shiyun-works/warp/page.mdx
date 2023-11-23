@@ -1,0 +1,91 @@
+export const metadata = {
+    title: "实用传送点",
+}
+
+## 大区地标
+
+### 京畿地区（首都圈）
+
+`gov.notice` 公告中心
+
+`jd.gov.city` 京都市政厅
+
+`dj.beining-park` 北宁公园
+
+`airport.wus` 吴山机场
+
+`airport.jia` 新京都机场
+
+### 西部地区（松严海都会圈）
+
+`haihua` 海花洲（传送门户）
+
+`sz.go.pref` 松山县厅
+
+`edu.412` 412研究所有限公司
+
+`airport.sck` 新竹机场
+
+`airport.yaz` 建德机场
+
+`airport.sns` 雷东机场
+
+### 西南地区（北群-天京都会圈）
+
+`bq` 北群区（传送门户）
+
+`edu.western.tj` 西部大学天京分校
+
+### 西北地区（婺州-坂井都会圈）
+
+`sa.kofun` 古坟公园
+
+`wz.edu.wzfls` 婺州外国语学校
+
+`airport.sak` 北坪机场
+
+`airport.wuz` 北村机场
+
+### 东海地区（东海、东南临海圈、远东圈）
+
+`edu.dhu` 东海大学
+
+`airport.ela` 长岛机场
+
+`airport.qsl` 昆士兰机场
+
+`airport.syd` 卧龙岗机场
+
+`airport.nvd` 新内华达-南沙机场
+
+### 东北地区（千代、岩岛、北路）
+
+`edu.neu` 东北大学
+
+`airport.osl` 奥斯陆机场
+
+`airport.iws` 岩岛机场
+
+### 北部地区（北岛、撒哈拉）
+
+`airport.bed` 天海机场
+
+`sh.tp` 撒哈拉特区（传送门户）
+
+### 中南地区（雪峰、南雪平）
+
+`airport.lkp` 林雪平机场
+
+### 佛州地区（佛州）
+
+`community.bgy.hall` 森林城市大厅
+
+export default function MDXPage({children}) {
+    return (
+        <>
+            <h1>{metadata.title}</h1>
+            <h3>{metadata.subtitle}</h3>
+            {children}
+        </>
+    )
+}
