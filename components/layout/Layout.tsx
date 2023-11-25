@@ -20,7 +20,7 @@ const Layout = ({children}: LayoutProps) => {
         <Sidebar/>
 
         <div className={`flex flex-col min-h-full p-8 md:p-12 sm:ml-64`}>
-            <div className={`mb-auto`}>
+            <div className={`mb-auto font-ming`}>
                 {children}
             </div>
             <Footer/>
