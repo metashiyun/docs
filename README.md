@@ -1,6 +1,6 @@
 # Shiyun Docs
 
-This is the documentations website for metaShiyun. This website is developed 
+This is the documentations website for metaShiyun.
 
 ## Getting Started
 
@@ -22,4 +22,6 @@ To edit the code, commit to `dev` branch, open a Pull Request after committing t
 
 ## Links
 
-[Shiyun Docs](https://docs.shiyun.org)
+1. [metaShiyun](https://www.shiyun.org)
+2. [Shiyun Docs](https://docs.shiyun.org)
+3. [Next.js Docs](https://nextjs.org/docs)
