@@ -14,7 +14,12 @@ const Article = ({params}: ArticleProps) => {
     const {data: frontMatter, content} = matter(markdownFile)
 
     return (
-        <Reader title={frontMatter.title} content={content} subtitle={frontMatter.subtitle} />
+        <Reader
+            title={frontMatter.title}
+            content={content}
+            subtitle={frontMatter.subtitle}
+            link={'/' + params.slug.reduce((a, b) => a + '/' + b)}
+        />
     )
 }
 
