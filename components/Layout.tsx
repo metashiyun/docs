@@ -20,9 +20,9 @@ const Layout = ({children}: LayoutProps) => {
         <Navbar />
 
         <div className={`flex flex-col min-h-full p-8 md:p-12 sm:ml-64`}>
-            <article className={`mb-auto`}>
+            <div className={`mb-auto`}>
                 {children}
-            </article>
+            </div>
             <Footer />
         </div>
 
