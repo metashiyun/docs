@@ -1,16 +1,16 @@
-import {MDXRemote} from "next-mdx-remote/rsc";
+import MDXContents from "@/components/MDXContents";
+import Hyperlink from "@/components/typography/Hyperlink";
+import Title from "@/components/typography/Title";
 
-const Reader = ({title, subtitle, content}: MdxPage) => {
+const Reader = ({title, subtitle, content, link}: MdxPage) => {
     return (
         <article>
-            <h1>{title}</h1>
-            {
-                subtitle ?
-                    <h3>{subtitle}</h3>
-                    :
-                    <></>
-            }
-            <MDXRemote source={content} />
+            <p className={`text-right font-ming`}>
+                <Hyperlink
+                    href={'https://github.com/metashiyun/docs/blob/main/contents' + link + ".mdx"}>修改此页</Hyperlink>
+            </p>
+            <Title subtitle={subtitle}>{title}</Title>
+            <MDXContents source={content}/>
         </article>
     )
 }

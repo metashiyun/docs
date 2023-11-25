@@ -1,6 +1,6 @@
 import Link from "next/link";
-import NavItem from "@/components/Navbar/NavItem";
-import NavGroupTitle from "@/components/Navbar/NavGroupTitle";
+import SidebarItem from "@/components/layout/Sidebar/SidebarItem";
+import SidebarTitle from "@/components/layout/Sidebar/SidebarTitle";
 import {useState} from "react";
 import {useOutsideClick} from "@/hooks/useOutsideClick";
 
@@ -57,7 +57,7 @@ const navbarData = [
         title: "社区信息",
         links: [
             {
-                title: "社区信息",
+                title: "玩家群组",
                 href: "/article/community"
             }
         ]
@@ -86,22 +86,26 @@ const navbarData = [
     }
 ]
 
-const Navbar = () => {
-    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+const Sidebar = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const toggleNavbar = () => {
-        setIsNavbarOpen(!isNavbarOpen)
+    const openSidebar = () => {
+        setIsSidebarOpen(true)
+    }
+
+    const closeSidebar = () => {
+        setIsSidebarOpen(false)
     }
 
     const ref = useOutsideClick(() => {
-        setIsNavbarOpen(false)
+        closeSidebar()
     })
 
     return (
         <header>
             <div className={`sm:hidden`}>
                 <button
-                    onClick={() => toggleNavbar()}
+                    onClick={() => openSidebar()}
                     className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 >
                     <span className="sr-only">Open sidebar</span>
@@ -114,19 +118,19 @@ const Navbar = () => {
             </div>
 
             <aside ref={ref}
-                   className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${isNavbarOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0`}>
+                   className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0`}>
                 <nav className={`h-full px-3 py-8 overflow-y-auto bg-gray-50 dark:bg-gray-800`}>
                     <div className={`space-y-2`}>
                         <div className={`ml-2 mb-4 sm:translate-x-0`}>
                             <Logo/>
-                            <p className={`mt-2 text-2xl ming font-bold`}>Shiyun Docs</p>
+                            <p className={`mt-2 text-2xl font-ming font-bold`}>Shiyun Docs</p>
                         </div>
-                        <NavItem href={'/'}>首页</NavItem>
+                        <SidebarItem href={'/'} closeSidebar={closeSidebar}>首页</SidebarItem>
                         {
                             navbarData.map((group, key) => <div key={key}>
-                                <NavGroupTitle>{group.title}</NavGroupTitle>
+                                <SidebarTitle>{group.title}</SidebarTitle>
                                 {group.links.map((link, key) => <div key={key}>
-                                    <NavItem href={link.href}>{link.title}</NavItem>
+                                    <SidebarItem href={link.href} closeSidebar={closeSidebar}>{link.title}</SidebarItem>
                                 </div>)}
                             </div>)
                         }
@@ -137,4 +141,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default Sidebar

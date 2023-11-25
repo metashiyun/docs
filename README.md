@@ -14,7 +14,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Contribute to Shiyun Docs (Documentations)
 
-To add or edit a page, write in MDX format under `contents` directory. Commit your changes to `docs` branch. Open a Pull Request after committing to this repository.
+To add or edit a page, write in MDX format under `contents` directory. Commit your changes to `docs` branch. Open a Pull
+Request after committing to this repository.
 
 ## Contribute to Shiyun Docs (Website)
 
