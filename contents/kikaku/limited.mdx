@@ -1,6 +1,6 @@
-export const metadata = {
-    title: "限定活动信息"
-}
+---
+title: 限定活动信息
+---
 
 ## 当前活动
 
@@ -25,13 +25,3 @@ export const metadata = {
 连接地址：每日在群里公布。
 
 地图特性：巨型生物群系（出生点附近） + 巨大化（其他地方）、以“雪地”为特征的出生点。
-
-export default function MDXPage({children}) {
-    return (
-        <>
-            <h1>{metadata.title}</h1>
-            <h3>{metadata.subtitle}</h3>
-            {children}
-        </>
-    )
-}

@@ -82,6 +82,7 @@ article ul {
 
 article em {
   font-family: "source-serif-4", "adobe-kaiti-std", cursive;
+  font-style: normal;
 }
 
 article code {
