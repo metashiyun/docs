@@ -7,15 +7,84 @@ import {useOutsideClick} from "@/hooks/useOutsideClick";
 function Logo() {
     return (
         <Link aria-label="metaShiyun" href="/">
-            <svg className="text-black dark:text-white" width="40" height="32" viewBox="0 0 256 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="text-black dark:text-white" width="40" height="32" viewBox="0 0 256 160" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 80L60.9524 41.9048L121.905 80L60.9524 118.095L0 80Z" fill="currentColor"/>
                 <path d="M67.0476 38.0952L128 0L188.952 38.0952L128 76.1905L67.0476 38.0952Z" fill="currentColor"/>
                 <path d="M67.0476 121.905L128 83.8095L188.952 121.905L128 160L67.0476 121.905Z" fill="currentColor"/>
                 <path d="M134.095 80L195.048 41.9048L256 80L195.048 118.095L134.095 80Z" fill="currentColor"/>
             </svg>
         </Link>
-    );
+    )
 }
+
+const navbarData = [
+    {
+        title: "总览",
+        links: [
+            {
+                title: "基本信息",
+                href: "/article/overview/info"
+            },
+            {
+                title: "关于白名单",
+                href: "/article/overview/whitelist"
+            },
+            {
+                title: "关于登录验证",
+                href: "/article/overview/login"
+            }
+        ]
+    },
+    {
+        title: "企划信息",
+        links: [
+            {
+                title: "石云宇宙",
+                href: "/article/kikaku/shiyun-verse"
+            },
+            {
+                title: "限定活动信息",
+                href: "/article/kikaku/limited"
+            },
+            {
+                title: "SSMP",
+                href: "/article/kikaku/ssmp"
+            }
+        ]
+    },
+    {
+        title: "社区信息",
+        links: [
+            {
+                title: "社区信息",
+                href: "/article/community"
+            }
+        ]
+    },
+    {
+        title: "红石云工场",
+        links: [
+            {
+                title: "基本规则",
+                href: "/article/shiyun-works/constitution"
+            },
+            {
+                title: "实用传送点",
+                href: "/article/shiyun-works/warp"
+            }
+        ]
+    },
+    {
+        title: "外部链接",
+        links: [
+            {
+                title: "元石云主页",
+                href: "https://www.shiyun.org"
+            }
+        ]
+    }
+]
 
 const Navbar = () => {
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -44,46 +113,23 @@ const Navbar = () => {
                 </button>
             </div>
 
-            <aside ref={ref} className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${isNavbarOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0`}>
+            <aside ref={ref}
+                   className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${isNavbarOpen ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0`}>
                 <nav className={`h-full px-3 py-8 overflow-y-auto bg-gray-50 dark:bg-gray-800`}>
                     <div className={`space-y-2`}>
                         <div className={`ml-2 mb-4 sm:translate-x-0`}>
-                            <Logo />
+                            <Logo/>
                             <p className={`mt-2 text-2xl ming font-bold`}>Shiyun Docs</p>
                         </div>
                         <NavItem href={'/'}>首页</NavItem>
-                        <div>
-                            <NavGroupTitle>总览</NavGroupTitle>
-                            <div>
-                                <NavItem href={'/overview/whitelist'}>关于白名单</NavItem>
-                                <NavItem href={'/overview/login'}>关于登录验证</NavItem>
-                            </div>
-                        </div>
-                        <div>
-                            <NavGroupTitle>企划信息</NavGroupTitle>
-                            <div>
-                                <NavItem href={'/kikaku/shiyun-verse'}>石云宇宙</NavItem>
-                                <NavItem href={'/kikaku/limited'}>限定活动信息</NavItem>
-                                <NavItem href={'/kikaku/ssmp'}>SSMP</NavItem>
-                            </div>
-                        </div>
-                        <div>
-                            <NavGroupTitle>社区信息</NavGroupTitle>
-                            <div>
-                                <NavItem href={'/community'}>社区信息</NavItem>
-                            </div>
-                        </div>
-                        <div>
-                            <NavGroupTitle>红石云工场</NavGroupTitle>
-                            <div>
-                                <NavItem href={'/shiyun-works/constitution'}>基本规则</NavItem>
-                                <NavItem href={'/shiyun-works/warp'}>实用传送点</NavItem>
-                            </div>
-                        </div>
-                        <div>
-                            <NavGroupTitle>外部链接</NavGroupTitle>
-                            <NavItem href={'https://www.shiyun.org'}>元石云主页</NavItem>
-                        </div>
+                        {
+                            navbarData.map((group, key) => <div key={key}>
+                                <NavGroupTitle>{group.title}</NavGroupTitle>
+                                {group.links.map((link, key) => <div key={key}>
+                                    <NavItem href={link.href}>{link.title}</NavItem>
+                                </div>)}
+                            </div>)
+                        }
                     </div>
                 </nav>
             </aside>
