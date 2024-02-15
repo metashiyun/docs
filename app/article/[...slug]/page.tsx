@@ -10,7 +10,7 @@ interface ArticleProps {
 }
 
 const Article = ({params}: ArticleProps) => {
-    const markdownFile = fs.readFileSync(path.join(process.cwd(), 'contents', params.slug.reduce((a, b) => a + '/' + b) + '.mdx'), 'utf-8')
+    const markdownFile = fs.readFileSync(path.join(process.cwd(), 'content', params.slug.reduce((a, b) => a + '/' + b) + '.mdx'), 'utf-8')
     const {data: frontMatter, content} = matter(markdownFile)
 
     return (
