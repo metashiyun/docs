@@ -72,6 +72,10 @@ const navbarData = [
             {
                 title: "实用传送点",
                 href: "/article/shiyun-works/warp"
+            },
+            {
+                title: "区划一览",
+                href: "/article/shiyun-works/regions"
             }
         ]
     },
