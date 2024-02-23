@@ -28,7 +28,7 @@ const navbarData = [
             },
             {
                 title: "关于白名单",
-                href: "/article/overview/whitelist"
+                href: "/article/overview/allowlist"
             },
             {
                 title: "关于登录验证",
@@ -67,7 +67,7 @@ const navbarData = [
         links: [
             {
                 title: "基本规则",
-                href: "/article/shiyun-works/constitution"
+                href: "/article/shiyun-works/basic-rule"
             },
             {
                 title: "实用传送点",
